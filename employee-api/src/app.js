@@ -11,13 +11,13 @@ const cors = require('cors');
 const app = express();
 
 // Rotas da API (Employee):
-const index = require('./router/index'); // Verifique se este arquivo está correto
+const index = require('./router/index');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.json({ type: 'application/vnd.api+json' }));
 app.use(cors());
 
-app.use(index); // Verifique se a rota está correta e exportada corretamente
+app.use(index);
 
 module.exports = app;

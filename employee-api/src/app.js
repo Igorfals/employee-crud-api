@@ -12,6 +12,7 @@ const app = express();
 
 // Rotas da API (Employee):
 const index = require('./router/index');
+const employeeRoute = require('./router/employee.routes');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -19,5 +20,6 @@ app.use(express.json({ type: 'application/vnd.api+json' }));
 app.use(cors());
 
 app.use(index);
+app.use('/api/', employeeRoute);
 
 module.exports = app;
